@@ -1,0 +1,8 @@
+{
+  "name": "nodejs-jenkins-cicd",
+  "version": "1.0.0",
+  "description": "Node.js demo for Jenkins and Docker CI/CD",
+  "main": "app.js",
+  "scripts": {"start": "node app.js", "test": "node --test"},
+  "engines": {"node": ">=18"}
+}
