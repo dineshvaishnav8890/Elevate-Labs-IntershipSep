@@ -1,47 +1,141 @@
-# Node.js CI/CD with Jenkins and Docker
+# Jenkins CI/CD Pipeline with Docker
 
-A simple Node.js web app for practicing a Jenkins CI/CD pipeline.
+A simple Node.js application integrated with a Jenkins CI/CD pipeline. The pipeline checks out the source code from GitHub, installs dependencies, runs tests, and builds a Docker image.
 
-## Requirements
-- Node.js 18+
-- Docker
-- Jenkins with Pipeline and Git plugins
-- Git and a GitHub repository
+## Project Overview
 
-## Project files
-- `app.js` — web server
-- `package.json` — scripts and project metadata
-- `test/app.test.js` — basic automated test
-- `Dockerfile` — container image instructions
-- `Jenkinsfile` — checkout, install, test, build, and deploy stages
+This project demonstrates a basic continuous integration workflow using **Jenkins**, **GitHub**, **Node.js**, and **Docker**.
 
-## Run locally
+### Objectives
+
+- Retrieve application code from the GitHub repository.
+- Install Node.js dependencies using npm.
+- Run the application's automated test script.
+- Build a Docker image for the application.
+- Verify that the containerized application can run locally.
+
+## Technology Stack
+
+| Technology | Purpose |
+|---|---|
+| Node.js | Runs the application |
+| npm | Installs dependencies and runs scripts |
+| Jenkins | Automates the CI/CD pipeline |
+| GitHub | Hosts the source code and Jenkinsfile |
+| Docker | Builds and runs the application container |
+| Linux / WSL | Development and execution environment |
+
+## Project Structure
+
+```text
+Jenkins-Second-Project/
+├── app.js
+├── package.json
+├── Dockerfile
+├── .dockerignore
+├── Jenkinsfile
+├── README.md
+└── test/
+    └── app.test.js
+```
+
+## Pipeline Workflow
+
+The Jenkins pipeline is configured to run when changes are pushed to the tracked `main` branch.
+
+1. **Checkout** — Jenkins checks out the repository source.
+2. **Install & Test** — Jenkins enters the project directory, installs dependencies with `npm install`, and runs `npm test`.
+3. **Build Docker Image** — Docker builds an image using the project's `Dockerfile`.
+
+> The pipeline's configured stages were verified as successful in Jenkins.
+
+## Run the Application Locally
+
+### Prerequisites
+
+Make sure Node.js, npm, and Docker are installed and available in your terminal.
+
+### Run with Node.js
+
+From the project directory:
+
 ```bash
 npm install
 npm test
 npm start
 ```
-Visit http://localhost:3000.
 
-## Run with Docker
+The application listens on port `3000`. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+### Build and run with Docker
+
+Build the image:
+
 ```bash
-docker build -t nodejs-jenkins-cicd .
-docker run --rm -p 3000:3000 nodejs-jenkins-cicd
+docker build -t nodejs-jenkins-cicd:local .
 ```
 
-## Configure Jenkins
-1. Make sure the Jenkins agent has Git, Node.js/npm, and Docker available.
-2. Ensure the Jenkins service account can access Docker. Docker socket access grants powerful host-level privileges; only enable it on a trusted machine.
-3. Create a Jenkins **Pipeline** job.
-4. Choose **Pipeline script from SCM**, select **Git**, and enter your repository URL and branch.
-5. Set the script path to `Jenkinsfile`, save, then click **Build Now**.
-6. For automatic builds, configure a GitHub webhook to your reachable Jenkins URL (commonly `/github-webhook/`) and enable the matching GitHub trigger in the job.
+Run a container:
 
-## Pipeline stages
-1. Checkout source code.
-2. Install dependencies.
-3. Run tests.
-4. Build a Docker image tagged with the Jenkins build number.
-5. Replace and start the app container on port 3000.
+```bash
+docker run -d -p 3000:3000 --name jenkins-app nodejs-jenkins-cicd:local
+```
 
-This is a learning project. Ensure port 3000 is free. A production deployment should use a dedicated target, secrets management, health checks, and a rollback strategy.
+Open [http://localhost:3000](http://localhost:3000) to check the application.
+
+To view the running container:
+
+```bash
+docker ps
+```
+
+To stop and remove the container:
+
+```bash
+docker stop jenkins-app
+docker rm jenkins-app
+```
+
+If a container named `jenkins-app` already exists, remove it before reusing that name.
+
+## Jenkins Configuration
+
+For a Pipeline job using **Pipeline script from SCM**:
+
+- **SCM:** Git
+- **Repository:** your GitHub repository URL
+- **Branch:** `main`
+- **Script Path:** `Jenkins-Second-Project/Jenkinsfile`
+
+The Jenkins agent needs access to the required tools, including Node.js/npm and Docker. In the WSL/Linux setup used for this project, Docker access for the Jenkins user was enabled by adding that user to the `docker` group and restarting Jenkins.
+
+**Security note:** Membership in the Docker group grants powerful control over the Docker host. Use this configuration only in a trusted learning environment and follow your organization's security practices for shared or production systems.
+
+## Troubleshooting Notes
+
+| Problem | Resolution used |
+|---|---|
+| `npm: not found` | Install Node.js and npm in the environment where the Jenkins job runs. |
+| Project files not found by npm | Run npm commands from the application directory in the pipeline. |
+| Docker socket permission denied | Check Docker group membership and verify Docker access as the Jenkins user. |
+
+## Verification
+
+The following checks were completed during the project:
+
+- Jenkins showed all configured pipeline stages as successful.
+- The Docker image `nodejs-jenkins-cicd:6` appeared in the local image list.
+- The application container was started with port `3000` published.
+- The application was checked through `http://localhost:3000`.
+
+## Repository
+
+GitHub repository: [Elevate-Labs-IntershipSep](https://github.com/dineshvaishnav8890/Elevate-Labs-IntershipSep)
+
+Project folder: `Jenkins-Second-Project`
+
+---
+
+**Project:** Jenkins CI/CD Pipeline with Docker  
+**Application:** Node.js  
+**Purpose:** Internship learning project
