@@ -19,11 +19,9 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        working-directory: Elevate-Labs-IntershipSep/first-project
-        run: npm install
+        run: npm ci
 
-      - name: Run test
-        working-directory: Elevate-Labs-IntershipSep/first-project
+      - name: Run tests
         run: npm test
 
       - name: Set up Docker Buildx
