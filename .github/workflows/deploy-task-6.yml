@@ -1,5 +1,5 @@
 
-name: Deploy Task 6 Website to GitHub Pages
+name: Deploy Task 6 to GitHub Pages
 
 on:
   push:
@@ -16,7 +16,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: task-6-pages
+  group: github-pages-task-6
   cancel-in-progress: true
 
 jobs:
@@ -31,6 +31,11 @@ jobs:
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
+
+      - name: Verify website files
+        run: |
+          ls -la Task-6-github-pages
+          test -f Task-6-github-pages/index.html
 
       - name: Upload Task 6 website
         uses: actions/upload-pages-artifact@v3
