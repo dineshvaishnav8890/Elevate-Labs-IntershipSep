@@ -1,0 +1,235 @@
+*{
+    margin: 0;
+    font-family: Arial;
+    border: border-box;
+}
+.nbar{
+    height: 60px;
+    background-color: #0f1111;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+}
+.nlogo{
+    height: 50px;
+    width: 100px;
+}
+.logo{
+    background-image: url(imgea/amazon_logo.png);
+    background-repeat: no-repeat;
+    background-size: 100px;
+    height: 50px;
+    width: 100px;
+}
+.border{
+    border: 1.5px soid transparent;
+}
+.border:hover{
+    border: 1.5px solid white;
+}
+/*box2*/
+.addfirst{
+color: #cccccc;
+font-size: 0.85rem;
+margin-left: 15px;
+}
+.addsec{
+    font-size: 1rem;
+    margin-left: 3px; ;
+}
+.addicon{
+    display: flex;
+    align-items: center;
+}
+/**box3**/
+.nsearch{
+    display: flex;
+    justify-content:space-evenly ;
+    background-color:palevioletred ;
+    width: 600px;
+    height:40px ;
+    border-radius: 4px;
+}
+.nsearch:hover{
+    border: 2px solid rgb(172, 94, 21);
+}
+.searchselect{
+    background-color: #f4f4f4;
+    width: 50px;
+    text-align: centers;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    border:none;
+
+}
+.inputsearch{
+    width: 100%;
+    font-size:1rem ;
+    border:none;
+}
+.searchicon{
+    width: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem ;
+    background-color: rgb(255, 136, 0);
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+     color: #0f1111;
+}
+/**box4**/
+span{
+    font-size: 0.8rem;
+}
+.nsecond{
+    font-size: .89rem;
+    font-weight: 720;
+}
+/**box6**/
+.ncard i {
+    font-size: 30px;
+}
+.ncard{
+    font-size:1rem ;
+    font-weight: 700px;
+}
+
+/**panal**/
+.panal{
+height: 40px;
+background-color: #222f3d;
+display: flex;
+color: #f4f4f4;
+align-items: center;
+justify-content:space-evenly ;
+}
+.pops p{
+    display: inline;
+    margin-left: 15px;
+    
+}
+.pops{
+    width: 95%;
+    font-size: 1rem;
+}
+/**Hsection**/
+.Hsection{
+    background-image: url(imgea/amz.jpg);
+    background-size: cover;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+.hmsg{
+    background-color:#f4f4f4f1 ;
+    color: #0f1111;
+    height:40px ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.86rem;
+    width: 80%;
+    margin-bottom: 25px;
+    
+}
+.hmsg a{
+    color:#007185 ;
+}
+/** CONTENT**/
+.itemsection{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    background-color:#e2e7e6 ;
+}
+
+.content{
+    /* border: 2px solid black; */
+    height: 380px;
+    width: 23%;
+    background-color: white;
+    padding:20px 0px 15px ;
+    margin-top: 17px;
+}
+.contimg{
+    height:300px ;
+    background-size:cover;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    
+
+}
+.con{
+    margin-left:10px;
+    margin-right:10px;
+
+}
+.con p{
+ color:#007185 ;
+}
+/** footer**/
+footer{
+    margin-top: 15px;
+}
+
+.foot1{
+    background-color:#37475a ;
+    color: white;
+    height: 50px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 1rem;
+}
+.foot2{
+    background-color: #222f3d;
+    color: white;
+    height: 300px;
+    display: flex;
+    justify-content: space-evenly;
+}
+ul{
+    margin-top: 20px;
+}
+ul a{
+    display: flex;
+    font-size: 0.85rem;
+    margin-top: 10px;
+    color: #dddddd;
+}
+.foot3{
+    background-color:#222f3d ;
+    color: white;
+    border-top: 0.5px solid white;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.simble{
+    background-image: url(imgea/amazon_logo.png);
+    background-repeat: no-repeat;
+    background-size: 100px;
+    height: 50px;
+    width: 100px;
+}
+.foot4{
+    background-color: #0f1111;
+    color: white;
+    height: 80px;
+    font-size: 0.8rem;
+    text-align: center;
+    }
+
+.page{
+padding-top: 20px;
+
+}
+.copyrt{
+    padding-top: 6px;
+
+}
