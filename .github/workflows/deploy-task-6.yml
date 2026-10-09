@@ -1,0 +1,42 @@
+
+name: Deploy Task 6 Website to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'Task-6-github-pages/**'
+      - '.github/workflows/deploy-task-6.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: task-6-pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Task 6 website
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './Task-6-github-pages'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
