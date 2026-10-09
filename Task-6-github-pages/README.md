@@ -1,90 +1,322 @@
-Task 6 --- Host a Static Website Using GitHub Pages
-Internship task: Deploy a static website with GitHub Pages  
-Repository:
-Elevate-Labs-IntershipSep  
-Live website:
-https://dineshvaishnav8890.github.io/Elevate-Labs-IntershipSep/
-Project overview
-This project demonstrates how to publish a static HTML/CSS website using
-GitHub Pages and automate deployment with GitHub Actions. The website
-contains an Amazon-inspired shopping homepage layout with a navigation
-bar, a gaming hero banner, and category cards.
-> This is a learning/demo project and is not affiliated with or endorsed
-> by Amazon.
-Objectives
-Build and organize a static website using HTML and CSS.
-Keep the site source code in a GitHub repository.
-Configure GitHub Pages to publish the site.
-Use a GitHub Actions workflow to deploy the website when changes are
-pushed to `main`.
-Capture evidence of the live site and successful workflow execution.
-Technologies used
-HTML5 --- page structure
-CSS3 --- layout and styling
-Git & GitHub --- version control and source hosting
-GitHub Pages --- static website hosting
-GitHub Actions --- automated deployment workflow
-Repository structure
-``` text
+\# Task 6: Host a Static Website Using GitHub Pages
+
+
+
+\## 📌 Project Overview
+
+
+
+This project demonstrates how to host a static website using \*\*GitHub Pages\*\* and automate the deployment process using \*\*GitHub Actions\*\*.
+
+
+
+The website is designed with HTML and CSS and features an Amazon-inspired shopping homepage layout, including a navigation bar, gaming banner, and product category sections.
+
+
+
+The main objective of this task is to understand static website hosting, GitHub repository management, and automated deployment through a CI/CD workflow.
+
+
+
+\## 🎯 Objectives
+
+
+
+\* Create and organize a static website using HTML and CSS.
+
+\* Host the website using GitHub Pages.
+
+\* Automate website deployment using GitHub Actions.
+
+\* Understand repository structure and file paths.
+
+\* Learn how to troubleshoot deployment errors and GitHub Pages 404 errors.
+
+\* Capture screenshots as proof of project completion.
+
+
+
+\## 🛠️ Technologies Used
+
+
+
+| Technology     | Purpose                    |
+
+| -------------- | -------------------------- |
+
+| HTML5          | Website structure          |
+
+| CSS3           | Website styling and layout |
+
+| Git            | Version control            |
+
+| GitHub         | Source code repository     |
+
+| GitHub Pages   | Static website hosting     |
+
+| GitHub Actions | Automated deployment       |
+
+
+
+\## 📂 Project Structure
+
+
+
+```text
+
 Elevate-Labs-IntershipSep/
+
+│
+
 ├── .github/
+
 │   └── workflows/
+
 │       └── deploy-task-6.yml
+
+│
+
 └── Task-6-github-pages/
-    ├── index.html
-    ├── style.css
-    ├── imgea/
-    └── README.md
+
+&#x20;   ├── index.html
+
+&#x20;   ├── style.css
+
+&#x20;   ├── imgea/
+
+&#x20;   └── README.md
+
 ```
-Important: GitHub Pages runs on a case-sensitive Linux environment.
-The homepage must be named exactly `index.html` (lowercase `i`).
-Deployment workflow
-Push website changes to the `main` branch.
-GitHub Actions checks out the repository.
-The workflow prepares GitHub Pages.
-The `Task-6-github-pages` folder is uploaded as the Pages artifact.
-The deploy step publishes the artifact.
-Open the live website URL and verify the result.
-How to run locally
-Clone the repository:
-    ``` bash
-    git clone https://github.com/dineshvaishnav8890/Elevate-Labs-IntershipSep.git
-    ```
-Open the project folder:
-    ``` bash
-    cd Elevate-Labs-IntershipSep/Task-6-github-pages
-    ```
-Open `index.html` in a browser. No build step is required for a
-plain HTML/CSS site.
-Screenshots
-Published website
-![GitHub Pages website screenshot](screenshots/github-pages-website.png)
-GitHub Actions deployment
-![GitHub Actions workflow](screenshots/github-actions-workflow.png)
-Verification checklist
-[ ] `index.html` exists in `Task-6-github-pages/` with lowercase
-filename.
-[ ] `style.css` and referenced image assets are present.
-[ ] GitHub repository → Settings → Pages uses GitHub Actions
-as the source.
-[ ] The Deploy Task 6 to GitHub Pages workflow finishes
-successfully.
-[ ] The live URL opens and displays the expected page.
-Troubleshooting
-404 / File not found: Confirm the uploaded Pages artifact
-contains `index.html` at its root. If the workflow uploads
-`./Task-6-github-pages`, the `index.html` file must be directly
-inside that folder.
-CSS or images do not load: Check that asset paths match the
-exact folder and filename capitalization.
-Workflow does not run: Check the workflow YAML path and confirm
-changes were pushed to `main`.
-Old page appears: Wait briefly for deployment to finish, then
-hard-refresh the browser.
-Learning outcomes
-Understanding static website hosting.
-Understanding the relationship between repository folders and the
-published site root.
-Using a GitHub Actions workflow for repeatable deployment.
-Troubleshooting case-sensitive paths and GitHub Pages 404 errors.
+
+
+
+\*\*Important:\*\* The homepage filename must be exactly `index.html` using a lowercase `i`. GitHub Pages runs on a case-sensitive environment, so `Index.html` and `index.html` are different filenames.
+
+
+
+\## 🌐 Live Website
+
+
+
+\*\*Website URL:\*\*
+
+https://dineshvaishnav8890.github.io/Elevate-Labs-IntershipSep/
+
+
+
+\*\*GitHub Repository:\*\*
+
+https://github.com/dineshvaishnav8890/Elevate-Labs-IntershipSep
+
+
+
+\*\*Project Folder:\*\*
+
+\[Task-6-github-pages](https://github.com/dineshvaishnav8890/Elevate-Labs-IntershipSep/tree/main/Task-6-github-pages)
+
+
+
+\## ⚙️ GitHub Actions Deployment
+
+
+
+The project uses a GitHub Actions workflow to publish the website.
+
+
+
+\### Deployment Process
+
+
+
+1\. Website files are committed and pushed to the `main` branch.
+
+2\. GitHub Actions checks out the repository.
+
+3\. The workflow configures GitHub Pages.
+
+4\. The `Task-6-github-pages` directory is uploaded as a Pages artifact.
+
+5\. GitHub Actions deploys the artifact to GitHub Pages.
+
+6\. The live website is opened and verified in a browser.
+
+
+
+\*\*Workflow file:\*\* `.github/workflows/deploy-task-6.yml`
+
+
+
+\*\*Deployment folder:\*\* `./Task-6-github-pages`
+
+
+
+\## 📸 Project Screenshots
+
+
+
+\### 1. Website Preview
+
+
+
+This screenshot shows the shopping homepage layout, gaming banner, navigation bar, and product category sections.
+
+
+
+!\[GitHub Pages Website](screenshots/github-pages-website.png)
+
+
+
+\### 2. GitHub Actions Workflow
+
+
+
+This screenshot shows the GitHub Actions workflow runs, including the successful deployment run marked with a green check.
+
+
+
+!\[GitHub Actions Workflow](screenshots/github-actions-workflow.png)
+
+
+
+> \*\*Note:\*\* Keep both screenshot files inside a folder named `screenshots` in the same directory as this README. The image paths above must match the actual filenames.
+
+
+
+\## 🚀 How to Run the Website Locally
+
+
+
+Since this is a static HTML/CSS website, no backend server or package installation is required.
+
+
+
+1\. Clone the repository:
+
+
+
+&#x20;  ```bash
+
+&#x20;  git clone https://github.com/dineshvaishnav8890/Elevate-Labs-IntershipSep.git
+
+&#x20;  ```
+
+
+
+2\. Open the project directory:
+
+
+
+&#x20;  ```bash
+
+&#x20;  cd Elevate-Labs-IntershipSep/Task-6-github-pages
+
+&#x20;  ```
+
+
+
+3\. Open `index.html` in your web browser.
+
+
+
+\## ✅ Verification Checklist
+
+
+
+\* \[ ] Website files are present in `Task-6-github-pages`.
+
+\* \[ ] Homepage is named `index.html`.
+
+\* \[ ] CSS and image paths are correct.
+
+\* \[ ] GitHub Pages source is configured as \*\*GitHub Actions\*\*.
+
+\* \[ ] The deployment workflow completes successfully.
+
+\* \[ ] The published URL opens the expected website.
+
+\* \[ ] Project screenshots are included in this repository.
+
+
+
+\## 🐛 Troubleshooting
+
+
+
+\### GitHub Pages shows 404
+
+
+
+\* Verify that `index.html` exists in the published folder.
+
+\* Check the exact capitalization of filenames.
+
+\* Confirm that the workflow uploads `./Task-6-github-pages`.
+
+\* Check the latest deployment under the repository's \*\*Actions\*\* tab.
+
+
+
+\### CSS or images are missing
+
+
+
+\* Verify that `style.css` is linked correctly in the HTML file.
+
+\* Check image paths and folder names.
+
+\* Remember that filenames are case-sensitive.
+
+
+
+\### Website does not update
+
+
+
+\* Wait for the latest workflow run to finish.
+
+\* Refresh the website with `Ctrl + F5`.
+
+\* Check the deployment logs if the problem continues.
+
+
+
+\## 📚 Learning Outcomes
+
+
+
+Through this project, I learned:
+
+
+
+\* How to host a static website using GitHub Pages.
+
+\* How to manage website source code using Git and GitHub.
+
+\* How GitHub Actions automates deployment.
+
+\* How to configure a deployment workflow for a subfolder.
+
+\* How to troubleshoot file naming, path, and deployment issues.
+
+
+
+\## 👨‍💻 Author
+
+
+
+\*\*Dinesh Vaishnav\*\*
+
+
+
+GitHub: \[@dineshvaishnav8890](https://github.com/dineshvaishnav8890)
+
+
+
+\---
+
+
+
+⭐ This project was completed as part of a DevOps internship task to gain practical experience with GitHub Pages and deployment automation.
+
+
 
