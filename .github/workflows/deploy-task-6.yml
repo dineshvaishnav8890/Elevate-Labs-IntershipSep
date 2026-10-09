@@ -35,7 +35,7 @@ jobs:
       - name: Verify website files
         run: |
           ls -la Task-6-github-pages
-          test -f Task-6-github-pages/Index.html
+          test -f Task-6-github-pages/index.html
 
       - name: Upload Task 6 website
         uses: actions/upload-pages-artifact@v3
